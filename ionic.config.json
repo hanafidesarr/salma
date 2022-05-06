@@ -1,0 +1,7 @@
+{
+  "name": "salma",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
