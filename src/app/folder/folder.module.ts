@@ -8,12 +8,17 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 
+import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     FolderPageRoutingModule
+  ],
+  providers: [
+    ScreenOrientation
   ],
   declarations: [FolderPage]
 })
