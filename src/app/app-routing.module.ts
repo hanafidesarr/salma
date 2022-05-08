@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'ran',
     loadChildren: () => import('./ran/ran.module').then( m => m.RanPageModule)
+  },
+  {
+    path: 'petunjuk',
+    loadChildren: () => import('./petunjuk/petunjuk.module').then( m => m.PetunjukPageModule)
   }
 ];
 
