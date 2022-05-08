@@ -26,3 +26,23 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+
+ion-content{
+  --ion-background-color:rgba(139,61,255,0.6);
+  .big-font {
+      font-size: 42px;
+      text-align: center;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+  }
+  ion-card {
+      background-color: white;
+      ion-card-title {
+          font-size: 32px;
+      }
+  }
+}
+
+ion-header {
+  --ion-background-color:rgba(139,61,255,0.6);
+}
