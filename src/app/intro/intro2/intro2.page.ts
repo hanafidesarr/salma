@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-intro2',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Intro2Page implements OnInit {
 
+  id: any;
   constructor() { }
 
+  @Input() step: string;
   ngOnInit() {
-  }
 
+    // this.createNotification();
+  
+    // setInterval(() => {
+    //   this.createNotification();
+    // }, 3000);
+  }
+  createNotification() {
+    console.log("aaaa")
+  }
+  
 }
