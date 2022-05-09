@@ -8,12 +8,19 @@ import { Intro2PageRoutingModule } from './intro2-routing.module';
 
 import { Intro2Page } from './intro2.page';
 
+import { NativeAudio } from '@awesome-cordova-plugins/native-audio/ngx';
+import { SmartAudio } from '../../providers/smart-audio.service';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     Intro2PageRoutingModule
+  ],
+  providers: [
+    NativeAudio,
+    SmartAudio
   ],
   declarations: [Intro2Page]
 })

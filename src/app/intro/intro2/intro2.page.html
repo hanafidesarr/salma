@@ -7,6 +7,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-text-center">
+  <h1><b>Coba Sebutkan nama benda ini ya, <br>saya beri contoh</b></h1>
+  <!-- <ion-button (click)="playVoice()"> PLAY NOW</ion-button>
+  <ion-button (click)="stopVoice()"> STOP NOW</ion-button> -->
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-2 *ngFor="let obj of array; let i = index">
+        <ion-img class="gambar-{{i}}" [src]="obj.url" style="width: 3rem; display: block; margin: 0 auto;"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
