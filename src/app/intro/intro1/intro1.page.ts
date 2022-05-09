@@ -10,16 +10,14 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 })
 export class Intro1Page implements OnInit {
 
-  constructor(platform: Platform, public smartAudio: SmartAudio) {
+  constructor(public platform: Platform, public smartAudio: SmartAudio) {
     
-    platform.ready().then(() => {
-      smartAudio.preload('tabSwitch', 'assets/mp3/file_example.mp3');
-      
-      smartAudio.play('tabSwitch');
-    });
+    this.startVoice()
   }
   
-
+  ionViewWillEnter() {
+    this.startVoice()
+  }
   ngOnInit() {
   }
 
@@ -32,4 +30,10 @@ export class Intro1Page implements OnInit {
     this.smartAudio.stop('tabSwitch');
   }
 
+  startVoice() {
+    this.platform.ready().then(() => {
+      this.smartAudio.preload('tabSwitch', 'assets/mp3/contoh-suara.mp3');
+      this.smartAudio.play('tabSwitch');
+    });
+  }
 }
