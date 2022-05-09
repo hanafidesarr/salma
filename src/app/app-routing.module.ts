@@ -4,7 +4,7 @@ import { IntroPage } from './intro/intro.page';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'home-ran',
     pathMatch: 'full'
   },
   {
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'petunjuk',
     loadChildren: () => import('./petunjuk/petunjuk.module').then( m => m.PetunjukPageModule)
+  },
+  {
+    path: 'home-ran',
+    loadChildren: () => import('./home-ran/home-ran.module').then( m => m.HomeRanPageModule)
   }
 ];
 
