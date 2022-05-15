@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
+import { Platform } from '@ionic/angular';
+import { SmartAudio } from '../providers/smart-audio.service';
 
 @Component({
   selector: 'app-home-ran',
@@ -9,8 +11,13 @@ import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/n
 })
 export class HomeRanPage implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private screenOrientation: ScreenOrientation) { }
+  constructor(private activatedRoute: ActivatedRoute, private screenOrientation: ScreenOrientation, public platform: Platform, public smartAudio: SmartAudio) {
+    this.startVoice()
+  }
 
+  ionViewWillLeave() {
+    this.startVoice()
+  }
 
   ngOnInit() {
     // get current
@@ -28,6 +35,17 @@ export class HomeRanPage implements OnInit {
           console.log("Orientation Changed");
       }
     );
+  }
+
+
+  startVoice() {
+    this.platform.ready().then(() => {
+      console.log("ready")
+      this.smartAudio.preload('backsound', 'assets/mp3/backsound.mp3');
+      this.smartAudio.play('backsound');
+      this.smartAudio.loop('backsound');
+      this.smartAudio.volume('backsound');
+    });
   }
 
 }

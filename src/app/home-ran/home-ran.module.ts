@@ -9,6 +9,9 @@ import { HomeRanPageRoutingModule } from './home-ran-routing.module';
 import { HomeRanPage } from './home-ran.page';
 import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/ngx';
 
+import { NativeAudio } from '@awesome-cordova-plugins/native-audio/ngx';
+import { SmartAudio } from '../providers/smart-audio.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +20,7 @@ import { ScreenOrientation } from '@awesome-cordova-plugins/screen-orientation/n
     HomeRanPageRoutingModule
   ],
   providers: [
-    ScreenOrientation
+    ScreenOrientation, SmartAudio, NativeAudio
   ],
   declarations: [HomeRanPage]
 })

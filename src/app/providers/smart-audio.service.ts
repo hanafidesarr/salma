@@ -60,4 +60,18 @@ export class SmartAudio {
           });
       }
     }
+
+    volume(key){
+        this.nativeAudio.setVolumeForComplexAsset(key, 0.1)
+    }
+
+
+    unload(key){
+        this.nativeAudio.unload(key)
+    }
+
+    loop(key){
+        this.nativeAudio.loop(key)
+    }
+    
 }
