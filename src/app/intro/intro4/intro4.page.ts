@@ -37,7 +37,19 @@ export class Intro4Page implements OnInit {
   }
   
   ionViewDidEnter() {
+
+    var elems = Array.from(document.querySelectorAll<HTMLElement>('.image-class'))
+    var index = 0, length = elems.length;
+    for ( ; index < length; index++) {
+        elems[index].style.width = '3rem'
+    }
+    
+    
     this.startVoice()
+    this.timeout_image = setTimeout(() => {
+      let voice = true
+      this.spillImage(false)
+    }, 5000)
   }
 
   startVoice() {
@@ -47,12 +59,7 @@ export class Intro4Page implements OnInit {
   }
 
   ngOnInit() {
-    this.timeout_image = setTimeout(() => {
-      let voice = false
-      this.spillImage(voice)
-    }, 4000)
-    
-
+    this.startVoice()
   }
 
   spillImage(voice) {
