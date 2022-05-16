@@ -6,11 +6,11 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-intro5',
-  templateUrl: './intro5.page.html',
-  styleUrls: ['./intro5.page.scss'],
+  selector: 'app-intro6',
+  templateUrl: './intro6.page.html',
+  styleUrls: ['./intro6.page.scss'],
 })
-export class Intro5Page implements OnInit {
+export class Intro6Page implements OnInit {
   collection_timeout_image: any = [];
   timeout_image: any;
   array: any = [
@@ -18,17 +18,27 @@ export class Intro5Page implements OnInit {
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
     {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"}
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"}
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
@@ -36,6 +46,7 @@ export class Intro5Page implements OnInit {
     this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
     this.smartAudio.preload('buku', 'assets/mp3/buku.m4a');
     this.smartAudio.preload('baju', 'assets/mp3/baju.m4a');
+    this.smartAudio.preload('pensil', 'assets/mp3/pensil.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('intro_voice2', 'assets/mp3/intro-voice2.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
@@ -43,17 +54,7 @@ export class Intro5Page implements OnInit {
   }
   
   ionViewDidEnter() {
-    var elems = Array.from(document.querySelectorAll<HTMLElement>('.image-class'))
-    var index = 0, length = elems.length;
-    for ( ; index < length; index++) {
-        elems[index].style.width = '3rem'
-    }
-    
     this.startVoice()
-    this.timeout_image = setTimeout(() => {
-      let voice = true
-      this.spillImage(false)
-    }, 5000)
   }
 
   startVoice() {
@@ -63,12 +64,17 @@ export class Intro5Page implements OnInit {
   }
 
   ngOnInit() {
-    this.startVoice()
+    this.timeout_image = setTimeout(() => {
+      let voice = false
+      this.spillImage(voice)
+    }, 6000)
+    
+
   }
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar4-" + i;
+      let student = "gambar6-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }
@@ -96,36 +102,6 @@ export class Intro5Page implements OnInit {
     }
   }
 
-
-  // playVoice() {
-  //   this.smartAudio.play('tabSwitch');
-  // }
-
-  // stopVoice() {
-  //   this.smartAudio.stop('tabSwitch');
-  // }
-  // ionViewDidLeave() {
-  //   this.removeAll()
-  // }
-
-  // ionViewWillLeave() {
-  //   this.removeAll()
-  // }
-  
-  // removeAll() {
-  //   this.smartAudio.stop('tas');
-  //   this.smartAudio.stop('intro_voice2');
-  //   this.smartAudio.stop('voice-coba-km-ulangi');
-  //   this.smartAudio.stop('km-hebat');
-  //   if (this.timeout_image != '') {
-  //     clearTimeout(this.timeout_image)
-  //   }
-  //   if (this.collection_timeout_image != '') {
-  //     for (let i = 0; i < this.collection_timeout_image.length; i++) {
-  //       clearTimeout(this.collection_timeout_image[i])
-  //     }
-  //   }
-  // }
   coba_ulangi() {
     this.platform.ready().then(() => {
       this.smartAudio.play('voice-coba-km-ulangi');
