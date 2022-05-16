@@ -6,64 +6,58 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-intro3',
-  templateUrl: './intro3.page.html',
-  styleUrls: ['./intro3.page.scss'],
+  selector: 'app-intro4',
+  templateUrl: './intro4.page.html',
+  styleUrls: ['./intro4.page.scss'],
 })
-export class Intro3Page implements OnInit {
+export class Intro4Page implements OnInit {
   collection_timeout_image: any = [];
   timeout_image: any;
   array: any = [
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
-    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
-    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
-    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"}
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
     this.smartAudio.preload('topi', 'assets/mp3/topi.m4a');
     this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
+    this.smartAudio.preload('buku', 'assets/mp3/buku.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
+    this.smartAudio.preload('intro_voice2', 'assets/mp3/intro-voice2.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
 
   }
   
   ionViewDidEnter() {
-
-    var elems = Array.from(document.querySelectorAll<HTMLElement>('.image-class'))
-    var index = 0, length = elems.length;
-    for ( ; index < length; index++) {
-        elems[index].style.width = '3rem'
-    }
-    
-    
     this.startVoice()
-    this.timeout_image = setTimeout(() => {
-      let voice = true
-      this.spillImage(voice)
-    }, 4000)
   }
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.preload('intro_voice1', 'assets/mp3/intro-voice1.m4a');
-      this.smartAudio.play('intro_voice1');
+      this.smartAudio.play('intro_voice2');
     });
   }
 
   ngOnInit() {
-    this.startVoice()
+    this.timeout_image = setTimeout(() => {
+      let voice = false
+      this.spillImage(voice)
+    }, 4000)
+    
+
   }
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar2-" + i;
+      let student = "gambar3-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }
@@ -108,7 +102,7 @@ export class Intro3Page implements OnInit {
   
   // removeAll() {
   //   this.smartAudio.stop('tas');
-  //   this.smartAudio.stop('intro_voice1');
+  //   this.smartAudio.stop('intro_voice2');
   //   this.smartAudio.stop('voice-coba-km-ulangi');
   //   this.smartAudio.stop('km-hebat');
   //   if (this.timeout_image != '') {
@@ -138,12 +132,10 @@ export class Intro3Page implements OnInit {
   ionViewDidLeave() {
 
     this.smartAudio.stop('tas');
-    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('intro_voice2');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
-    if (this.timeout_image != '') {
-      clearTimeout(this.timeout_image)
-    }
+    clearTimeout(this.timeout_image)
     if (this.collection_timeout_image != '') {
       for (let i = 0; i < this.collection_timeout_image.length; i++) {
         clearTimeout(this.collection_timeout_image[i])
