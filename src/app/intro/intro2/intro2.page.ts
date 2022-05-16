@@ -11,9 +11,10 @@ import { Router } from '@angular/router';
 })
 export class Intro2Page implements OnInit {
 
-  spill_image: any = [];
+  loading: any;
+  timeout_image: any = [];
+  collection_timeout_image: any = [];
   array: any = [
-    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
@@ -22,21 +23,13 @@ export class Intro2Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-
+    this.startVoice()
+    this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
-
-    this.platform.backButton.subscribeWithPriority(10, () => {
-
-      this.spillImage()
-      this.smartAudio.unload("intro_voice1");
-      this.smartAudio.unload("tas");
-      this.smartAudio.unload("voice-coba-km-ulangi");
-      this.smartAudio.unload("km-hebat");
-
-      // this.router.navigateByUrl('/intro', { replaceUrl: true }) 
-    });
   }
+
+
   
   ionViewDidEnter() {
     this.startVoice()
@@ -49,46 +42,48 @@ export class Intro2Page implements OnInit {
     });
   }
 
-  voiceElement(name, url_voice) {
-    this.smartAudio.play(name);
-  }
-  
   ngOnInit() {
-    this.startVoice()
-    setTimeout(() => {
-      this.spillImage()
+    this.timeout_image = setTimeout(() => {
+      let voice = true
+      this.spillImage(voice)
     }, 4000)
-    
   }
 
-  spillImage() {
+  spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
       let student = "gambar-" + i;
-      this.smartAudio.preload(this.array[i].name, this.array[i].voice);
+      if (voice == false) {
+        (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
+      }
+      let xxx = setTimeout(() => {
+        (<HTMLElement>document.querySelector('.' + student)).style.width = '4rem'
 
-      let timeout = setTimeout(() => {
-        (<HTMLElement>document.querySelector('.' + student)).style.width = '5rem'
-        this.voiceElement(this.array[i].name, this.array[i].voice);
+        if (voice == true) {
+          this.smartAudio.play(this.array[i].name);
+        }
 
-        this.spill_image.push(timeout)
-        let index = i+1
-        const aray_length = this.array.length
-
-        if (index == aray_length) {
+        if (i+1 == this.array.length) {
           setTimeout(() => {
-            this.youSmart()
+            if (voice == true) {
+              this.coba_ulangi()
+            } else {
+              this.km_hebat()
+            }
           }, 3000)
         }
+
       }, 3000*(i+1));
+
+      this.collection_timeout_image.push(xxx)
     }
   }
 
-  youSmart() {
-
+  coba_ulangi() {
     this.platform.ready().then(() => {
       this.smartAudio.play('voice-coba-km-ulangi');
       setTimeout(() => {
-        this.spillImage2()
+        let voice = false
+        this.spillImage(voice)
       }, 3000)
     })
   }
@@ -102,32 +97,22 @@ export class Intro2Page implements OnInit {
   // }
 
   ionViewDidLeave() {
-  }
 
-  spillImage2() {
-    
-    for (let i = 0; i < this.array.length; i++) {
-      
-      let student = "gambar-" + i;
-      (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
-      this.smartAudio.preload(this.array[i].name, this.array[i].voice);
-
-      let timeout = setTimeout(() => {
-        (<HTMLElement>document.querySelector('.' + student)).style.width = '5rem'
-
-        this.spill_image.push(timeout)
-        let index = i+1
-        const aray_length = this.array.length
-
-        if (index == aray_length) {
-          setTimeout(() => {
-            this.km_hebat()
-          }, 2000)
-        }
-      }, 3000*(i+1));
-      this.spill_image.push(timeout)
+    this.smartAudio.unload('tas');
+    this.smartAudio.unload('intro_voice1');
+    this.smartAudio.unload('voice-coba-km-ulangi');
+    this.smartAudio.unload('km-hebat');
+    if (this.timeout_image != '') {
+      clearTimeout(this.timeout_image)
     }
+    if (this.collection_timeout_image != '') {
+      for (let i = 0; i < this.collection_timeout_image.length; i++) {
+        clearTimeout(this.collection_timeout_image[i])
+      }
+    }
+
   }
+
 
   km_hebat() {
     this.platform.ready().then(() => {
