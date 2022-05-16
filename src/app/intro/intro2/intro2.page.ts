@@ -23,7 +23,6 @@ export class Intro2Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.startVoice()
     this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
@@ -32,7 +31,12 @@ export class Intro2Page implements OnInit {
 
   
   ionViewDidEnter() {
+    (<HTMLElement>document.querySelector('.image-class')).style.width = '3rem'
     this.startVoice()
+    this.timeout_image = setTimeout(() => {
+      let voice = true
+      this.spillImage(voice)
+    }, 4000)
   }
 
   startVoice() {
@@ -43,10 +47,7 @@ export class Intro2Page implements OnInit {
   }
 
   ngOnInit() {
-    this.timeout_image = setTimeout(() => {
-      let voice = true
-      this.spillImage(voice)
-    }, 4000)
+    this.startVoice()
   }
 
   spillImage(voice) {
@@ -98,10 +99,10 @@ export class Intro2Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.unload('tas');
-    this.smartAudio.unload('intro_voice1');
-    this.smartAudio.unload('voice-coba-km-ulangi');
-    this.smartAudio.unload('km-hebat');
+    this.smartAudio.stop('tas');
+    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('voice-coba-km-ulangi');
+    this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
       clearTimeout(this.timeout_image)
     }

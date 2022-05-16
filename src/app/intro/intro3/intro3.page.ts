@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class Intro3Page implements OnInit {
   collection_timeout_image: any = [];
+  timeout_image: any;
   array: any = [
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
@@ -26,11 +27,11 @@ export class Intro3Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.startVoice()
     this.smartAudio.preload('topi', 'assets/mp3/topi.m4a');
     this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+
   }
   
   ionViewDidEnter() {
@@ -45,18 +46,19 @@ export class Intro3Page implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => {
+    this.timeout_image = setTimeout(() => {
       let voice = true
       this.spillImage(voice)
     }, 4000)
     
+
   }
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
       let student = "gambar2-" + i;
       if (voice == false) {
-        (<HTMLElement>document.querySelector('.' + student)).style.width = '2rem'
+        (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }
       let xxx = setTimeout(() => {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '4rem'
@@ -81,12 +83,6 @@ export class Intro3Page implements OnInit {
     }
   }
 
-  lulu() {
-    for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar2-" + i;
-      (<HTMLElement>document.querySelector('.' + student)).style.width = '2rem !important'
-    }
-  }
 
   // playVoice() {
   //   this.smartAudio.play('tabSwitch');
@@ -95,15 +91,28 @@ export class Intro3Page implements OnInit {
   // stopVoice() {
   //   this.smartAudio.stop('tabSwitch');
   // }
+  // ionViewDidLeave() {
+  //   this.removeAll()
+  // }
 
-  ionViewDidLeave() {
-    this.smartAudio.unload('topi');
-    this.smartAudio.unload('tas');
-    for (let i = 0; i < this.collection_timeout_image.length; i++) {
-      clearTimeout(this.collection_timeout_image[i])
-    }
-  }
-
+  // ionViewWillLeave() {
+  //   this.removeAll()
+  // }
+  
+  // removeAll() {
+  //   this.smartAudio.stop('tas');
+  //   this.smartAudio.stop('intro_voice1');
+  //   this.smartAudio.stop('voice-coba-km-ulangi');
+  //   this.smartAudio.stop('km-hebat');
+  //   if (this.timeout_image != '') {
+  //     clearTimeout(this.timeout_image)
+  //   }
+  //   if (this.collection_timeout_image != '') {
+  //     for (let i = 0; i < this.collection_timeout_image.length; i++) {
+  //       clearTimeout(this.collection_timeout_image[i])
+  //     }
+  //   }
+  // }
   coba_ulangi() {
     this.platform.ready().then(() => {
       this.smartAudio.play('voice-coba-km-ulangi');
@@ -118,5 +127,19 @@ export class Intro3Page implements OnInit {
     this.platform.ready().then(() => {
       this.smartAudio.play('km-hebat');
     })
+  }
+  ionViewDidLeave() {
+
+    this.smartAudio.stop('tas');
+    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('voice-coba-km-ulangi');
+    this.smartAudio.stop('km-hebat');
+    clearTimeout(this.timeout_image)
+    if (this.collection_timeout_image != '') {
+      for (let i = 0; i < this.collection_timeout_image.length; i++) {
+        clearTimeout(this.collection_timeout_image[i])
+      }
+    }
+
   }
 }
