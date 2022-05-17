@@ -9,6 +9,7 @@ export class AppComponent {
     { title: 'Apa itu RAN?', url: '/ran', icon: 'mail' },
     { title: 'Petunjuk', url: '/petunjuk', icon: 'paper-plane' },
     { title: 'Latihan', url: '/intro', icon: 'heart' },
+    { title: 'RAN OBJEK', url: '/intro/intro1', icon: 'heart' },
     { title: 'Permainan', url: '/intro', icon: 'archive' }
   ];
 

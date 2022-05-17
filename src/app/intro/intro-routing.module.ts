@@ -43,6 +43,10 @@ const routes: Routes = [
   {
     path: 'intro9',
     loadChildren: () => import('./intro9/intro9.module').then( m => m.Intro9PageModule)
+  },
+  {
+    path: 'intro10',
+    loadChildren: () => import('./intro10/intro10.module').then( m => m.Intro10PageModule)
   }
 ];
 
