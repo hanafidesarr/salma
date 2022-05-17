@@ -6,43 +6,71 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-intro7',
-  templateUrl: './intro7.page.html',
-  styleUrls: ['./intro7.page.scss'],
+  selector: 'app-intro9',
+  templateUrl: './intro9.page.html',
+  styleUrls: ['./intro9.page.scss'],
 })
-export class Intro7Page implements OnInit {
+export class Intro9Page implements OnInit {
   collection_timeout_image: any = [];
   timeout_image: any;
   array: any = [
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
 
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
     {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+
 
     {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+
+
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
     {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
     {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
 
+
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
     {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
     {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
     {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
-
-    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
-    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
-    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
-    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"}
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
@@ -61,7 +89,7 @@ export class Intro7Page implements OnInit {
     var elems = Array.from(document.querySelectorAll<HTMLElement>('.image-class'))
     var index = 0, length = elems.length;
     for ( ; index < length; index++) {
-        elems[index].style.width = '3rem'
+        elems[index].style.width = '2rem'
     }
     
     this.startVoice()
@@ -83,13 +111,13 @@ export class Intro7Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar7-" + i;
+      let student = "gambar9-" + i;
       if (voice == false) {
-        (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
+        (<HTMLElement>document.querySelector('.' + student)).style.width = '2rem'
       }
 
       let xxx = setTimeout(() => {
-        (<HTMLElement>document.querySelector('.' + student)).style.width = '4rem'
+        (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
 
         if (voice == true) {
           this.smartAudio.play(this.array[i].name);
