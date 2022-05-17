@@ -1,0 +1,11 @@
+<ion-content class="ion-text-center" [routerLink]="['/intro/intro3']">
+  <h1><b>Coba Sebutkan nama warna di bawah ini ya, <br>saya beri contoh</b></h1>
+  <!-- <ion-button (click)="playVoice()"> PLAY NOW</ion-button>
+  <ion-button (click)="stopVoice()"> STOP NOW</ion-button> -->
+  <br>
+  <div class="fruits">
+    <div class="xc"  *ngFor="let obj of array; let i = index">
+      <ion-img class="gambar-{{i}} image-class" [src]="obj.url" style="width: 3rem;"></ion-img>
+    </div>
+  </div>
+</ion-content>
