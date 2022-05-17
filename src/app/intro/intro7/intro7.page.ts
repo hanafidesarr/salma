@@ -6,39 +6,43 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-intro6',
-  templateUrl: './intro6.page.html',
-  styleUrls: ['./intro6.page.scss'],
+  selector: 'app-intro7',
+  templateUrl: './intro7.page.html',
+  styleUrls: ['./intro7.page.scss'],
 })
-export class Intro6Page implements OnInit {
+export class Intro7Page implements OnInit {
   collection_timeout_image: any = [];
   timeout_image: any;
   array: any = [
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
+
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
+
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
+
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
     {name: "tas", url: "assets/icon/bag-child.png", voice: "assets/mp3/tas.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "topi", url: "assets/icon/cap.png", voice: "assets/mp3/topi.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
-    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"},
     {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
     {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
-    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
-    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
-    {name: "buku", url: "assets/icon/buku.png", voice: "assets/mp3/buku.m4a"},
+
     {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
     {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
     {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
     {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"},
-    {name: "pensil", url: "assets/icon/pensil.png", voice: "assets/mp3/pensil.m4a"}
+    {name: "baju", url: "assets/icon/baju.png", voice: "assets/mp3/baju.m4a"}
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
@@ -54,17 +58,7 @@ export class Intro6Page implements OnInit {
   }
   
   ionViewDidEnter() {
-    var elems = Array.from(document.querySelectorAll<HTMLElement>('.image-class'))
-    var index = 0, length = elems.length;
-    for ( ; index < length; index++) {
-        elems[index].style.width = '3rem'
-    }
-    
     this.startVoice()
-    this.timeout_image = setTimeout(() => {
-      let voice = true
-      this.spillImage(false)
-    }, 5000)
   }
 
   startVoice() {
@@ -74,12 +68,17 @@ export class Intro6Page implements OnInit {
   }
 
   ngOnInit() {
-    this.startVoice()
+    this.timeout_image = setTimeout(() => {
+      let voice = false
+      this.spillImage(voice)
+    }, 6000)
+    
+
   }
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar6-" + i;
+      let student = "gambar7-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }
