@@ -11,6 +11,7 @@ export class AppComponent {
     { title: 'Latihan', url: '/intro', icon: 'heart' },
     { title: 'RAN OBJEK', url: '/intro/intro1', icon: 'heart' },
     { title: 'RAN WARNA', url: '/intro/warna', icon: 'heart' },
+    { title: 'RAN ANGKA', url: '/intro/angka', icon: 'heart' },
     { title: 'Permainan', url: '/intro', icon: 'archive' }
   ];
 

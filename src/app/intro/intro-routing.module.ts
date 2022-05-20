@@ -87,6 +87,10 @@ const routes: Routes = [
   {
     path: 'warna9',
     loadChildren: () => import('./warna9/warna9.module').then( m => m.Warna9PageModule)
+  },
+  {
+    path: 'angka',
+    loadChildren: () => import('./angka/angka.module').then( m => m.AngkaPageModule)
   }
 ];
 
