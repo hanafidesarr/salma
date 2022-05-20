@@ -125,11 +125,13 @@ export class Warna5Page implements OnInit {
   }
 
   ionViewDidLeave() {
-    this.smartAudio.stop('tas');
-    this.smartAudio.stop('sebutkan-warna-bisu');
+
+    this.smartAudio.stop('coba-sebutkan-warna');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
-    clearTimeout(this.timeout_image)
+    if (this.timeout_image != '') {
+      clearTimeout(this.timeout_image)
+    }
     if (this.collection_timeout_image != '') {
       for (let i = 0; i < this.collection_timeout_image.length; i++) {
         clearTimeout(this.collection_timeout_image[i])

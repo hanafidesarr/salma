@@ -6,31 +6,44 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-warna3',
-  templateUrl: './warna3.page.html',
-  styleUrls: ['./warna3.page.scss'],
+  selector: 'app-warna6',
+  templateUrl: './warna6.page.html',
+  styleUrls: ['./warna6.page.scss'],
 })
-export class Warna3Page implements OnInit {
+export class Warna6Page implements OnInit {
   collection_timeout_image: any = [];
   timeout_image: any;
   array: any = [
     {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
-    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
-    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
     {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
+    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
+    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
     {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
 
     {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
     {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
     {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
+    {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
     {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
+
+    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
+    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
+    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
+    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
     {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
 
     {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
     {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
+    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
     {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
     {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
-    {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
+
+    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
+    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
+    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
+    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
+    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
+
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
@@ -42,12 +55,14 @@ export class Warna3Page implements OnInit {
   }
   
   ionViewDidEnter() {
+
     var elems = Array.from(document.querySelectorAll<HTMLElement>('.image-class'))
     var index = 0, length = elems.length;
     for ( ; index < length; index++) {
         elems[index].style.width = '3rem'
     }
-
+    
+    
     this.startVoice()
     this.timeout_image = setTimeout(() => {
       let voice = true
@@ -67,7 +82,7 @@ export class Warna3Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar3-" + i;
+      let student = "gambar6-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }
@@ -111,13 +126,11 @@ export class Warna3Page implements OnInit {
   }
 
   ionViewDidLeave() {
-
-    this.smartAudio.stop('coba-sebutkan-warna');
+    this.smartAudio.stop('tas');
+    this.smartAudio.stop('sebutkan-warna-bisu');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
-    if (this.timeout_image != '') {
-      clearTimeout(this.timeout_image)
-    }
+    clearTimeout(this.timeout_image)
     if (this.collection_timeout_image != '') {
       for (let i = 0; i < this.collection_timeout_image.length; i++) {
         clearTimeout(this.collection_timeout_image[i])
@@ -125,5 +138,4 @@ export class Warna3Page implements OnInit {
     }
 
   }
-
 }
