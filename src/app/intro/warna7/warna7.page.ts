@@ -6,43 +6,43 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-warna6',
-  templateUrl: './warna6.page.html',
-  styleUrls: ['./warna6.page.scss'],
+  selector: 'app-warna7',
+  templateUrl: './warna7.page.html',
+  styleUrls: ['./warna7.page.scss'],
 })
-export class Warna6Page implements OnInit {
+export class Warna7Page implements OnInit {
   collection_timeout_image: any = [];
   timeout_image: any;
   array: any = [
     {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
     {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
     {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
-    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
-    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
-
-    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
-    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
-    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
-    {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
-    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
-
-    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
-    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
-    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
     {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
     {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
 
+    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
+    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
     {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
     {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
+    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
+
+    {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
+    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
+    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
+    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
+    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
+
+    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
+    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
     {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
     {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
     {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
 
     {name: "kuning", url: "assets/icon/kuning.png", voice: "assets/mp3/kuning.m4a"},
     {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
-    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
-    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
-    {name: "hitam", url: "assets/icon/hitam.png", voice: "assets/mp3/hitam.m4a"},
+    {name: "merah", url: "assets/icon/merah.png", voice: "assets/mp3/merah.m4a"},
+    {name: "biru", url: "assets/icon/biru.png", voice: "assets/mp3/biru.m4a"},
+    {name: "hijau", url: "assets/icon/hijau.png", voice: "assets/mp3/hijau.m4a"},
 
   ];
 
@@ -82,7 +82,7 @@ export class Warna6Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar6-" + i;
+      let student = "gambar7-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }

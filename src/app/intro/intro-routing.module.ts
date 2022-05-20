@@ -75,6 +75,10 @@ const routes: Routes = [
   {
     path: 'warna6',
     loadChildren: () => import('./warna6/warna6.module').then( m => m.Warna6PageModule)
+  },
+  {
+    path: 'warna7',
+    loadChildren: () => import('./warna7/warna7.module').then( m => m.Warna7PageModule)
   }
 ];
 
