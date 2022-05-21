@@ -15,34 +15,37 @@ export class Angka4Page implements OnInit {
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/6.m4a"},
+    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/6.m4a"},
+    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/6.m4a"},
+    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/2.m4a"},
+    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/4.m4a"},
 
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/4.m4a"},
+    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/6.m4a"},
+    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/4.m4a"},
+    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/4.m4a"},
+    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/2.m4a"},
 
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/2.m4a"},
+    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/2.m4a"},
+    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/2.m4a"},
+    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/4.m4a"},
+    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/6.m4a"},
 
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/7.m4a"},
+    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/7.m4a"},
+    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/7.m4a"},
+    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/7.m4a"},
+    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/7.m4a"},
   
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
+    this.smartAudio.preload('2-ungu', 'assets/mp3/2.m4a');
+    this.smartAudio.preload('4-ungu', 'assets/mp3/4.m4a');
+    this.smartAudio.preload('6-ungu', 'assets/mp3/6.m4a');
+    this.smartAudio.preload('7-ungu', 'assets/mp3/7.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
   }
@@ -65,8 +68,8 @@ export class Angka4Page implements OnInit {
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.preload('intro_voice1', 'assets/mp3/intro-voice1.m4a');
-      this.smartAudio.play('intro_voice1');
+      this.smartAudio.preload('sebutkan-angka-beri-contoh', 'assets/mp3/sebutkan-angka-beri-contoh.m4a');
+      this.smartAudio.play('sebutkan-angka-beri-contoh');
     });
   }
 
@@ -123,8 +126,13 @@ export class Angka4Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('tas');
-    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('2-ungu');
+    this.smartAudio.stop('4-ungu');
+    this.smartAudio.stop('6-ungu');
+    this.smartAudio.stop('7-ungu');
+    this.smartAudio.stop('sebutkan-angka-beri-contoh');
+
+    this.smartAudio.stop('sebutkan-angka-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {

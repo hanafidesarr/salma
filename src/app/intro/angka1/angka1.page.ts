@@ -23,7 +23,6 @@ export class Angka1Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
     this.smartAudio.preload('2-biru', 'assets/mp3/2.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
@@ -105,7 +104,7 @@ export class Angka1Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('tas');
+    this.smartAudio.stop('2-biru');
     this.smartAudio.stop('sebutkan-angka-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');

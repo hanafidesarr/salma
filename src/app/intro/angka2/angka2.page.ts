@@ -15,21 +15,22 @@ export class Angka2Page implements OnInit {
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
-    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/2.m4a"},
+    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/2.m4a"},
+    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/2.m4a"},
+    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/2.m4a"},
+    {name: "2-hijau", url: "assets/icon/2-hijau.png", voice: "assets/mp3/2.m4a"},
 
-    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/4.m4a"},
+    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/4.m4a"},
+    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/4.m4a"},
+    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/4.m4a"},
+    {name: "4-hijau", url: "assets/icon/4-hijau.png", voice: "assets/mp3/4.m4a"},
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
+    this.smartAudio.preload('2-hijau', 'assets/mp3/2.m4a');
+    this.smartAudio.preload('4-hijau', 'assets/mp3/4.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
   }
@@ -52,8 +53,8 @@ export class Angka2Page implements OnInit {
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.preload('intro_voice1', 'assets/mp3/intro-voice1.m4a');
-      this.smartAudio.play('intro_voice1');
+      this.smartAudio.preload('sebutkan-angka-beri-contoh', 'assets/mp3/sebutkan-angka-beri-contoh.m4a');
+      this.smartAudio.play('sebutkan-angka-beri-contoh');
     });
   }
 
@@ -109,9 +110,9 @@ export class Angka2Page implements OnInit {
   // }
 
   ionViewDidLeave() {
-
-    this.smartAudio.stop('tas');
-    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('2-biru');
+    this.smartAudio.stop('4-hijau');
+    this.smartAudio.stop('sebutkan-angka-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {

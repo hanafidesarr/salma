@@ -15,27 +15,30 @@ export class Angka3Page implements OnInit {
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
-    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/2.m4a"},
+    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/4.m4a"},
+    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/2.m4a"},
+    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/2.m4a"},
+    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/2.m4a"},
 
-    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/4.m4a"},
+    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/4.m4a"},
+    {name: "2-biru", url: "assets/icon/2-biru.png", voice: "assets/mp3/2.m4a"},
+    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/4.m4a"},
+    {name: "4-biru", url: "assets/icon/4-biru.png", voice: "assets/mp3/4.m4a"},
 
-    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/6.m4a"},
+    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/6.m4a"},
+    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/6.m4a"},
+    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/6.m4a"},
+    {name: "6-biru", url: "assets/icon/6-biru.png", voice: "assets/mp3/6.m4a"},
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
     this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
+    this.smartAudio.preload('2-biru', 'assets/mp3/2.m4a');
+    this.smartAudio.preload('4-biru', 'assets/mp3/4.m4a');
+    this.smartAudio.preload('6-biru', 'assets/mp3/6.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
   }
@@ -58,8 +61,8 @@ export class Angka3Page implements OnInit {
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.preload('intro_voice1', 'assets/mp3/intro-voice1.m4a');
-      this.smartAudio.play('intro_voice1');
+      this.smartAudio.preload('sebutkan-angka-beri-contoh', 'assets/mp3/sebutkan-angka-beri-contoh.m4a');
+      this.smartAudio.play('sebutkan-angka-beri-contoh');
     });
   }
 
@@ -116,8 +119,11 @@ export class Angka3Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('tas');
-    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('2-biru');
+    this.smartAudio.stop('4-biru');
+    this.smartAudio.stop('6-biru');
+    this.smartAudio.stop('sebutkan-angka-beri-contoh');
+    
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
