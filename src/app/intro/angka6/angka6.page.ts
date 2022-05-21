@@ -5,39 +5,45 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-angka4',
-  templateUrl: './angka4.page.html',
-  styleUrls: ['./angka4.page.scss'],
+  selector: 'app-angka6',
+  templateUrl: './angka6.page.html',
+  styleUrls: ['./angka6.page.scss'],
 })
-export class Angka4Page implements OnInit {
+export class Angka6Page implements OnInit {
 
   loading: any;
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
 
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
 
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-ungu", url: "assets/icon/2-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-ungu", url: "assets/icon/4-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-ungu", url: "assets/icon/6-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
+    
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
 
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-ungu", url: "assets/icon/7-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
   
   ];
 
@@ -76,7 +82,7 @@ export class Angka4Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "angka4-" + i;
+      let student = "angka6-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }
