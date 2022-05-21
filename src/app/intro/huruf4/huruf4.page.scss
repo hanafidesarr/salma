@@ -1,0 +1,11 @@
+.fruits {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+.xc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
