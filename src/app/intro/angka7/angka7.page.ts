@@ -15,40 +15,46 @@ export class Angka7Page implements OnInit {
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/2.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/6.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/7.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/4.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/2.m4a"},
 
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/4.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/2.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/6.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/4.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/2.m4a"},
 
-    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/6.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/4.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/6.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/7.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/9.m4a"},
     
-    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/7.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/9.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/7.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/2.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/4.m4a"},
 
-    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/9.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/6.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/9.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/4.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/2.m4a"},
   
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
+    
+    this.smartAudio.preload('2-hitam', 'assets/mp3/2.m4a');
+    this.smartAudio.preload('4-hitam', 'assets/mp3/4.m4a');
+    this.smartAudio.preload('6-hitam', 'assets/mp3/6.m4a');
+    this.smartAudio.preload('7-hitam', 'assets/mp3/7.m4a');
+    this.smartAudio.preload('9-hitam', 'assets/mp3/9.m4a');
+
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
   }
@@ -71,8 +77,8 @@ export class Angka7Page implements OnInit {
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.preload('intro_voice1', 'assets/mp3/intro-voice1.m4a');
-      this.smartAudio.play('intro_voice1');
+      this.smartAudio.preload('sebutkan-angka-beri-contoh', 'assets/mp3/sebutkan-angka-beri-contoh.m4a');
+      this.smartAudio.play('sebutkan-angka-beri-contoh');
     });
   }
 
@@ -129,8 +135,13 @@ export class Angka7Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('tas');
-    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('2-hitam');
+    this.smartAudio.stop('4-hitam');
+    this.smartAudio.stop('6-hitam');
+    this.smartAudio.stop('7-hitam');
+    this.smartAudio.stop('9-hitam');
+
+    this.smartAudio.stop('intro_voicesebutkan-angka-beri-contoh1');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
