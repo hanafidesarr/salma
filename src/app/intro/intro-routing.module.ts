@@ -123,6 +123,10 @@ const routes: Routes = [
   {
     path: 'angka8',
     loadChildren: () => import('./angka8/angka8.module').then( m => m.Angka8PageModule)
+  },
+  {
+    path: 'angka9',
+    loadChildren: () => import('./angka9/angka9.module').then( m => m.Angka9PageModule)
   }
 ];
 
