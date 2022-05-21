@@ -155,6 +155,10 @@ const routes: Routes = [
   {
     path: 'huruf6',
     loadChildren: () => import('./huruf6/huruf6.module').then( m => m.Huruf6PageModule)
+  },
+  {
+    path: 'huruf7',
+    loadChildren: () => import('./huruf7/huruf7.module').then( m => m.Huruf7PageModule)
   }
 ];
 
