@@ -141,7 +141,7 @@ export class Angka7Page implements OnInit {
     this.smartAudio.stop('7-hitam');
     this.smartAudio.stop('9-hitam');
 
-    this.smartAudio.stop('intro_voicesebutkan-angka-beri-contoh1');
+    this.smartAudio.stop('sebutkan-angka-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
