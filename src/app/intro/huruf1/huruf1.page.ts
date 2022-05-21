@@ -15,15 +15,15 @@ export class Huruf1Page implements OnInit {
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
-    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/tas.m4a"},
-    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/tas.m4a"},
+    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-ungu", url: "assets/icon/a-ungu.png", voice: "assets/mp3/a.m4a"},
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
+    this.smartAudio.preload('a-ungu', 'assets/mp3/a.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
   }
@@ -46,8 +46,8 @@ export class Huruf1Page implements OnInit {
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.preload('intro_voice1', 'assets/mp3/intro-voice1.m4a');
-      this.smartAudio.play('intro_voice1');
+      this.smartAudio.preload('sebutkan-huruf-beri-contoh', 'assets/mp3/sebutkan-huruf-beri-contoh.m4a');
+      this.smartAudio.play('sebutkan-huruf-beri-contoh');
     });
   }
 
@@ -104,8 +104,8 @@ export class Huruf1Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('tas');
-    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('a-ungu');
+    this.smartAudio.stop('sebutkan-huruf-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
