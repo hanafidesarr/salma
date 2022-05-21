@@ -99,6 +99,10 @@ const routes: Routes = [
   {
     path: 'angka2',
     loadChildren: () => import('./angka2/angka2.module').then( m => m.Angka2PageModule)
+  },
+  {
+    path: 'angka3',
+    loadChildren: () => import('./angka3/angka3.module').then( m => m.Angka3PageModule)
   }
 ];
 
