@@ -12,7 +12,8 @@ export class AppComponent {
     { title: 'RAN OBJEK', url: '/intro/intro1', icon: 'heart' },
     { title: 'RAN WARNA', url: '/intro/warna', icon: 'heart' },
     { title: 'RAN ANGKA', url: '/intro/angka', icon: 'heart' },
-    { title: 'Permainan', url: '/intro', icon: 'archive' }
+    { title: 'RAN HURUF', url: '/intro/huruf', icon: 'heart' },
+    { title: 'Permainan', url: '/permainan', icon: 'archive' }
   ];
 
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

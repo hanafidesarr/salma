@@ -127,6 +127,10 @@ const routes: Routes = [
   {
     path: 'angka9',
     loadChildren: () => import('./angka9/angka9.module').then( m => m.Angka9PageModule)
+  },
+  {
+    path: 'huruf',
+    loadChildren: () => import('./huruf/huruf.module').then( m => m.HurufPageModule)
   }
 ];
 
