@@ -15,40 +15,43 @@ export class Huruf5Page implements OnInit {
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
 
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
 
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
 
-    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
 
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
+    this.smartAudio.preload('a-hitam', 'assets/mp3/a.m4a');
+    this.smartAudio.preload('s-hitam', 'assets/mp3/s.m4a');
+    this.smartAudio.preload('o-hitam', 'assets/mp3/o.m4a');
+    this.smartAudio.preload('d-hitam', 'assets/mp3/d.m4a');
+    this.smartAudio.preload('p-hitam', 'assets/mp3/p.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
   }
@@ -71,8 +74,8 @@ export class Huruf5Page implements OnInit {
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.preload('intro_voice1', 'assets/mp3/intro-voice1.m4a');
-      this.smartAudio.play('intro_voice1');
+      this.smartAudio.preload('sebutkan-huruf-beri-contoh', 'assets/mp3/sebutkan-huruf-beri-contoh.m4a');
+      this.smartAudio.play('sebutkan-huruf-beri-contoh');
     });
   }
 
@@ -129,8 +132,13 @@ export class Huruf5Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('tas');
-    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('a-hitam');
+    this.smartAudio.stop('s-hitam');
+    this.smartAudio.stop('o-hitam');
+    this.smartAudio.stop('d-hitam');
+    this.smartAudio.stop('p-hitam');
+
+    this.smartAudio.stop('sebutkan-huruf-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {

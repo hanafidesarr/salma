@@ -44,7 +44,7 @@ export class Huruf4Page implements OnInit {
     this.smartAudio.preload('a-ungu', 'assets/mp3/a.m4a');
     this.smartAudio.preload('s-ungu', 'assets/mp3/s.m4a');
     this.smartAudio.preload('o-ungu', 'assets/mp3/o.m4a');
-    this.smartAudio.preload('d-ungu', 'assets/mp3/o.m4a');
+    this.smartAudio.preload('d-ungu', 'assets/mp3/d.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
   }
