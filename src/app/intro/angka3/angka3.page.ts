@@ -46,7 +46,7 @@ export class Angka3Page implements OnInit {
     var elems = Array.from(document.querySelectorAll<HTMLElement>('.image-class'))
     var index = 0, length = elems.length;
     for ( ; index < length; index++) {
-        elems[index].style.width = '3rem'
+        elems[index].style.width = '2rem'
     }
     this.startVoice()
     this.timeout_image = setTimeout(() => {
@@ -71,10 +71,10 @@ export class Angka3Page implements OnInit {
     for (let i = 0; i < this.array.length; i++) {
       let student = "angka3-" + i;
       if (voice == false) {
-        (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
+        (<HTMLElement>document.querySelector('.' + student)).style.width = '2rem'
       }
       let xxx = setTimeout(() => {
-        (<HTMLElement>document.querySelector('.' + student)).style.width = '4rem'
+        (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
 
         if (voice == true) {
           this.smartAudio.play(this.array[i].name);

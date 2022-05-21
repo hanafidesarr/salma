@@ -5,45 +5,45 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-angka5',
-  templateUrl: './angka5.page.html',
-  styleUrls: ['./angka5.page.scss'],
+  selector: 'app-angka7',
+  templateUrl: './angka7.page.html',
+  styleUrls: ['./angka7.page.scss'],
 })
-export class Angka5Page implements OnInit {
+export class Angka7Page implements OnInit {
 
   loading: any;
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
     {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
     {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
 
     {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
     {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
 
     {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
     {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
     
     {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
     {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "7-hitam", url: "assets/icon/7-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
 
     {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "6-hitam", url: "assets/icon/6-hitam.png", voice: "assets/mp3/tas.m4a"},
     {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
-    {name: "9-hitam", url: "assets/icon/9-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "4-hitam", url: "assets/icon/4-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "2-hitam", url: "assets/icon/2-hitam.png", voice: "assets/mp3/tas.m4a"},
   
   ];
 
@@ -82,7 +82,7 @@ export class Angka5Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "angka5-" + i;
+      let student = "angka7-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '2rem'
       }
