@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'level3',
     loadChildren: () => import('./level3/level3.module').then( m => m.Level3PageModule)
+  },
+  {
+    path: 'level4',
+    loadChildren: () => import('./level4/level4.module').then( m => m.Level4PageModule)
   }
 ];
 

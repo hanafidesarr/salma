@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>LEVEL 3</ion-title>
+    <ion-title>LEVEL 4</ion-title>
     <ion-buttons slot="end">
-      <ion-button fill="clear" [routerLink]="['/permainan/level4']">
+      <ion-button fill="clear" [routerLink]="['/folder/Inbox']">
         <ion-icon slot="icon-only" name="exit"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -29,7 +29,7 @@
 
   <div class="fruits">
     <div class="xc"  *ngFor="let obj of array; let i = index">
-      <ion-img class="level3-{{i}} image-class" [src]="obj.url" style="width: 2rem;"></ion-img>
+      <ion-img class="level4-{{i}} image-class" [src]="obj.url" style="width: 2rem;"></ion-img>
     </div>
   </div>
 </ion-content>
