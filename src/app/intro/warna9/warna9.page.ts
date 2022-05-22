@@ -71,9 +71,14 @@ export class Warna9Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
+
+    this.smartAudio.preload('merah', 'assets/mp3/merah.m4a');
+    this.smartAudio.preload('biru', 'assets/mp3/biru.m4a');
+    this.smartAudio.preload('kuning', 'assets/mp3/kuning.m4a');
+    this.smartAudio.preload('hitam', 'assets/mp3/hitam.m4a');
     this.smartAudio.preload('hijau', 'assets/mp3/hijau.m4a');
     this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
-    this.smartAudio.preload('sebutkan-warna-bisu', 'assets/mp3/sebutkan-warna-bisu.m4a');
+    this.smartAudio.preload('coba-sebutkan-warna', 'assets/mp3/coba-sebutkan-warna.m4a');
     this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
 
   }
@@ -90,13 +95,13 @@ export class Warna9Page implements OnInit {
     this.startVoice()
     this.timeout_image = setTimeout(() => {
       let voice = true
-      this.spillImage(false)
+      this.spillImage(true)
     }, 5000)
   }
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.play('sebutkan-warna-bisu');
+      this.smartAudio.play('coba-sebutkan-warna');
     });
   }
 
@@ -106,7 +111,7 @@ export class Warna9Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar9-" + i;
+      let student = "warna9-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '2rem'
       }
@@ -151,7 +156,7 @@ export class Warna9Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('sebutkan-warna-bisu');
+    this.smartAudio.stop('coba-sebutkan-warna');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {

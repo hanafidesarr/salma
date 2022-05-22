@@ -82,7 +82,7 @@ export class Warna7Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar7-" + i;
+      let student = "warna7-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }
@@ -127,7 +127,7 @@ export class Warna7Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('coba-sebutkan-warna');
+    this.smartAudio.stop('sebutkan-warna-bisu');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
