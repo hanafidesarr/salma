@@ -39,7 +39,6 @@ export class Intro5Page implements OnInit {
       this.smartAudio.preload('buku', 'assets/mp3/buku.m4a');
       this.smartAudio.preload('baju', 'assets/mp3/baju.m4a');
       this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
-      this.smartAudio.preload('intro_voice2', 'assets/mp3/intro-voice2.m4a');
       this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
     })
 
@@ -61,6 +60,7 @@ export class Intro5Page implements OnInit {
 
   startVoice() {
     this.platform.ready().then(() => {
+      this.smartAudio.preload('intro_voice2', 'assets/mp3/intro-voice2.m4a');
       this.smartAudio.play('intro_voice2');
     });
   }
