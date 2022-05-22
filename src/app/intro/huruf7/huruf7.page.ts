@@ -47,13 +47,17 @@ export class Huruf7Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('a-hitam', 'assets/mp3/a.m4a');
-    this.smartAudio.preload('s-hitam', 'assets/mp3/s.m4a');
-    this.smartAudio.preload('o-hitam', 'assets/mp3/o.m4a');
-    this.smartAudio.preload('d-hitam', 'assets/mp3/d.m4a');
-    this.smartAudio.preload('p-hitam', 'assets/mp3/p.m4a');
-    this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
-    this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    
+    this.platform.ready().then(() => {
+      this.smartAudio.preload('sebutkan-huruf-beri-contoh', 'assets/mp3/sebutkan-huruf-beri-contoh.m4a');
+      this.smartAudio.preload('a-hitam', 'assets/mp3/a.m4a');
+      this.smartAudio.preload('s-hitam', 'assets/mp3/s.m4a');
+      this.smartAudio.preload('o-hitam', 'assets/mp3/o.m4a');
+      this.smartAudio.preload('d-hitam', 'assets/mp3/d.m4a');
+      this.smartAudio.preload('p-hitam', 'assets/mp3/p.m4a');
+      this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
+      this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    })
   }
 
 
@@ -80,7 +84,6 @@ export class Huruf7Page implements OnInit {
   }
 
   ngOnInit() {
-    this.startVoice()
   }
 
   spillImage(voice) {
@@ -132,13 +135,13 @@ export class Huruf7Page implements OnInit {
 
   ionViewDidLeave() {
 
+    this.smartAudio.stop('sebutkan-huruf-beri-contoh');
     this.smartAudio.stop('a-hitam');
     this.smartAudio.stop('s-hitam');
     this.smartAudio.stop('o-hitam');
     this.smartAudio.stop('d-hitam');
     this.smartAudio.stop('p-hitam');
 
-    this.smartAudio.stop('sebutkan-huruf-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {

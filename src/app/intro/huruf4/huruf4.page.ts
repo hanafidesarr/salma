@@ -41,12 +41,16 @@ export class Huruf4Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('a-ungu', 'assets/mp3/a.m4a');
-    this.smartAudio.preload('s-ungu', 'assets/mp3/s.m4a');
-    this.smartAudio.preload('o-ungu', 'assets/mp3/o.m4a');
-    this.smartAudio.preload('d-ungu', 'assets/mp3/d.m4a');
-    this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
-    this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    
+    this.platform.ready().then(() => {
+      this.smartAudio.preload('sebutkan-huruf-beri-contoh', 'assets/mp3/sebutkan-huruf-beri-contoh.m4a');
+      this.smartAudio.preload('a-ungu', 'assets/mp3/a.m4a');
+      this.smartAudio.preload('s-ungu', 'assets/mp3/s.m4a');
+      this.smartAudio.preload('o-ungu', 'assets/mp3/o.m4a');
+      this.smartAudio.preload('d-ungu', 'assets/mp3/d.m4a');
+      this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
+      this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    })
   }
 
 
@@ -73,7 +77,6 @@ export class Huruf4Page implements OnInit {
   }
 
   ngOnInit() {
-    this.startVoice()
   }
 
   spillImage(voice) {
