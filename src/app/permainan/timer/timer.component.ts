@@ -86,25 +86,16 @@ export class TimerComponent {
     async presentAlertConfirm() {
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
-        header: 'Waktu nya sudah habis',
-        message: 'Apakah kamu mau mengulanginya lagi?',
+        header: 'Perhatian',
+        message: 'Waktunya sudah habis ya',
         buttons: [
           {
-            text: 'Tidak',
-            role: 'cancel',
-            cssClass: 'secondary',
-            id: 'cancel-button',
-            handler: (blah) => {
-              console.log('Confirm Cancel: blah');
-            }
-          }, {
             text: 'Baik',
             id: 'confirm-button',
             handler: () => {
               console.log('Confirm Okay');
-              this.initTimer();
+              this.stopSpill()
 
-              this.startTimer()
             }
           }
         ]

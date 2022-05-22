@@ -17,8 +17,8 @@
         <timer timeInSeconds="50" class="ion-text-center"></timer>
       </ion-col>
       <ion-col>
-        <ion-button *ngIf="!start" expand="full" (click)="startGame()">Yuks Mulai Permainan</ion-button>
-        <ion-button *ngIf="start" expand="full" color="danger" (click)="stopGame()">Berhenti</ion-button>
+        <ion-button *ngIf="!start || ( timer && timer.hasFinished() )" expand="full" (click)="startGame()" >Yuks Mulai Permainan</ion-button>
+        <ion-button *ngIf="start" [hidden]="timer.hasFinished()" expand="full" color="danger" (click)="stopGame()">Berhenti</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

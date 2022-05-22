@@ -77,6 +77,7 @@ export class Level1Page implements OnInit {
  
   startGame() {
     this.start = true
+    this.timer.initTimer()
     this.timer.startTimer();
     this.timer.spillImage(this.array, "level1")
   }
