@@ -29,10 +29,14 @@ export class Angka2Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('2-hijau', 'assets/mp3/2.m4a');
-    this.smartAudio.preload('4-hijau', 'assets/mp3/4.m4a');
-    this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
-    this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    
+    this.platform.ready().then(() => {
+      this.smartAudio.preload('sebutkan-angka-beri-contoh', 'assets/mp3/sebutkan-angka-beri-contoh.m4a');
+      this.smartAudio.preload('2-hijau', 'assets/mp3/2.m4a');
+      this.smartAudio.preload('4-hijau', 'assets/mp3/4.m4a');
+      this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
+      this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    })
   }
 
 
@@ -59,7 +63,6 @@ export class Angka2Page implements OnInit {
   }
 
   ngOnInit() {
-    this.startVoice()
   }
 
   spillImage(voice) {
@@ -110,9 +113,8 @@ export class Angka2Page implements OnInit {
   // }
 
   ionViewDidLeave() {
-    this.smartAudio.stop('2-biru');
-    this.smartAudio.stop('4-hijau');
     this.smartAudio.stop('sebutkan-angka-beri-contoh');
+    this.smartAudio.stop('4-hijau');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {

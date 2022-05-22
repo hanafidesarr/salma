@@ -42,12 +42,16 @@ export class Angka4Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('2-ungu', 'assets/mp3/2.m4a');
-    this.smartAudio.preload('4-ungu', 'assets/mp3/4.m4a');
-    this.smartAudio.preload('6-ungu', 'assets/mp3/6.m4a');
-    this.smartAudio.preload('7-ungu', 'assets/mp3/7.m4a');
-    this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
-    this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    
+    this.platform.ready().then(() => {
+      this.smartAudio.preload('sebutkan-angka-beri-contoh', 'assets/mp3/sebutkan-angka-beri-contoh.m4a');
+      this.smartAudio.preload('2-ungu', 'assets/mp3/2.m4a');
+      this.smartAudio.preload('4-ungu', 'assets/mp3/4.m4a');
+      this.smartAudio.preload('6-ungu', 'assets/mp3/6.m4a');
+      this.smartAudio.preload('7-ungu', 'assets/mp3/7.m4a');
+      this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
+      this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    })
   }
 
 
@@ -74,7 +78,6 @@ export class Angka4Page implements OnInit {
   }
 
   ngOnInit() {
-    this.startVoice()
   }
 
   spillImage(voice) {
@@ -132,7 +135,6 @@ export class Angka4Page implements OnInit {
     this.smartAudio.stop('7-ungu');
     this.smartAudio.stop('sebutkan-angka-beri-contoh');
 
-    this.smartAudio.stop('sebutkan-angka-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
