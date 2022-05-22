@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'petunjuk',
     loadChildren: () => import('./petunjuk/petunjuk.module').then( m => m.PetunjukPageModule)
+  },
+  {
+    path: 'level1',
+    loadChildren: () => import('./level1/level1.module').then( m => m.Level1PageModule)
   }
 ];
 
