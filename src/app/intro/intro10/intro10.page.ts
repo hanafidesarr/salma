@@ -73,15 +73,16 @@ export class Intro10Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('topi', 'assets/mp3/topi.m4a');
-    this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
-    this.smartAudio.preload('buku', 'assets/mp3/buku.m4a');
-    this.smartAudio.preload('baju', 'assets/mp3/baju.m4a');
-    this.smartAudio.preload('pensil', 'assets/mp3/pensil.m4a');
-    this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
-    this.smartAudio.preload('intro_voice2', 'assets/mp3/intro-voice2.m4a');
-    this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
-
+    this.platform.ready().then(() => {
+      this.smartAudio.preload('topi', 'assets/mp3/topi.m4a');
+      this.smartAudio.preload('tas', 'assets/mp3/tas.m4a');
+      this.smartAudio.preload('buku', 'assets/mp3/buku.m4a');
+      this.smartAudio.preload('baju', 'assets/mp3/baju.m4a');
+      this.smartAudio.preload('pensil', 'assets/mp3/pensil.m4a');
+      this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
+      this.smartAudio.preload('intro_voice2', 'assets/mp3/intro-voice2.m4a');
+      this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    })
   }
   
   ionViewDidEnter() {
@@ -105,7 +106,6 @@ export class Intro10Page implements OnInit {
   }
 
   ngOnInit() {
-    this.startVoice()
   }
 
   spillImage(voice) {

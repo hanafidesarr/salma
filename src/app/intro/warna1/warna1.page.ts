@@ -56,7 +56,7 @@ export class Warna1Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "gambar-" + i;
+      let student = "gambar1-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
       }

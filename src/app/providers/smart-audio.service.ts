@@ -66,8 +66,10 @@ export class SmartAudio {
     }
 
 
-    unload(key){
-        this.nativeAudio.unload(key)
+    reload(key, asset){
+        this.nativeAudio.preloadSimple(key, asset).then(()=>{
+            this.nativeAudio.play(key,asset)
+        })
     }
 
     loop(key){

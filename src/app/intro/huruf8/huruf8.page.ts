@@ -95,8 +95,8 @@ export class Huruf8Page implements OnInit {
 
   startVoice() {
     this.platform.ready().then(() => {
-      this.smartAudio.preload('intro_voice1', 'assets/mp3/intro-voice1.m4a');
-      this.smartAudio.play('intro_voice1');
+      this.smartAudio.preload('sebutkan-huruf-beri-contoh', 'assets/mp3/sebutkan-huruf-beri-contoh.m4a');
+      this.smartAudio.play('sebutkan-huruf-beri-contoh');
     });
   }
 
@@ -154,7 +154,7 @@ export class Huruf8Page implements OnInit {
   ionViewDidLeave() {
 
     this.smartAudio.stop('tas');
-    this.smartAudio.stop('intro_voice1');
+    this.smartAudio.stop('sebutkan-huruf-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
