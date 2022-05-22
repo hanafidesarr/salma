@@ -5,67 +5,69 @@ import { SmartAudio } from '../../providers/smart-audio.service';
 
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-huruf8',
-  templateUrl: './huruf8.page.html',
-  styleUrls: ['./huruf8.page.scss'],
+  selector: 'app-huruf9',
+  templateUrl: './huruf9.page.html',
+  styleUrls: ['./huruf9.page.scss'],
 })
-export class Huruf8Page implements OnInit {
+export class Huruf9Page implements OnInit {
 
   loading: any;
   timeout_image: any = [];
   collection_timeout_image: any = [];
   array: any = [
     {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
     {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
-    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
 
     {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
     {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/tas.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
     {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
-    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
-
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
     {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
-    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
-
-    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
     {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
+    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
 
     {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
     {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
-    {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
+    {name: "s-hitam", url: "assets/icon/s-hitam.png", voice: "assets/mp3/s.m4a"},
+    {name: "d-hitam", url: "assets/icon/d-hitam.png", voice: "assets/mp3/d.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "a-hitam", url: "assets/icon/a-hitam.png", voice: "assets/mp3/a.m4a"},
+    {name: "o-hitam", url: "assets/icon/o-hitam.png", voice: "assets/mp3/o.m4a"},
     {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
     {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
     {name: "p-hitam", url: "assets/icon/p-hitam.png", voice: "assets/mp3/p.m4a"},
@@ -74,6 +76,7 @@ export class Huruf8Page implements OnInit {
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
     
     this.platform.ready().then(() => {
+
       this.smartAudio.preload('a-hitam', 'assets/mp3/a.m4a');
       this.smartAudio.preload('s-hitam', 'assets/mp3/s.m4a');
       this.smartAudio.preload('o-hitam', 'assets/mp3/o.m4a');
@@ -114,7 +117,7 @@ export class Huruf8Page implements OnInit {
 
   spillImage(voice) {
     for (let i = 0; i < this.array.length; i++) {
-      let student = "huruf8-" + i;
+      let student = "huruf9-" + i;
       if (voice == false) {
         (<HTMLElement>document.querySelector('.' + student)).style.width = '1rem'
       }
@@ -160,12 +163,13 @@ export class Huruf8Page implements OnInit {
   // }
 
   ionViewDidLeave() {
+
+    this.smartAudio.stop('sebutkan-huruf-beri-contoh');
     this.smartAudio.stop('a-hitam');
     this.smartAudio.stop('s-hitam');
     this.smartAudio.stop('o-hitam');
     this.smartAudio.stop('p-hitam');
     this.smartAudio.stop('d-hitam');
-    this.smartAudio.stop('sebutkan-huruf-beri-contoh');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
