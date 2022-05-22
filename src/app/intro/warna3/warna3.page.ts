@@ -112,7 +112,7 @@ export class Warna3Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('coba-sebutkan-warna');
+    this.smartAudio.stop('sebutkan-warna-bisu');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {

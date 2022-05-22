@@ -28,10 +28,14 @@ export class Warna2Page implements OnInit {
   ];
 
   constructor(private ElByClassName: ElementRef, public platform: Platform, public smartAudio: SmartAudio, public router: Router) {
-    this.smartAudio.preload('merah', 'assets/mp3/merah.m4a');
-    this.smartAudio.preload('biru', 'assets/mp3/biru.m4a');
-    this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
-    this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    
+    this.platform.ready().then(() => {
+      this.smartAudio.preload('coba-sebutkan-warna', 'assets/mp3/coba-sebutkan-warna.m4a');
+      this.smartAudio.preload('merah', 'assets/mp3/merah.m4a');
+      this.smartAudio.preload('biru', 'assets/mp3/biru.m4a');
+      this.smartAudio.preload('voice-coba-km-ulangi', 'assets/mp3/voice-coba-km-ulangi.m4a');
+      this.smartAudio.preload('km-hebat', 'assets/mp3/hore-km-hebat.m4a');
+    })
   }
 
 
@@ -57,7 +61,6 @@ export class Warna2Page implements OnInit {
   }
 
   ngOnInit() {
-    this.startVoice()
   }
 
   spillImage(voice) {
@@ -109,8 +112,9 @@ export class Warna2Page implements OnInit {
 
   ionViewDidLeave() {
 
-    this.smartAudio.stop('merah');
     this.smartAudio.stop('coba-sebutkan-warna');
+    this.smartAudio.stop('merah');
+    this.smartAudio.stop('biru');
     this.smartAudio.stop('voice-coba-km-ulangi');
     this.smartAudio.stop('km-hebat');
     if (this.timeout_image != '') {
