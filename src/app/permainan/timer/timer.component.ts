@@ -64,7 +64,7 @@ export class TimerComponent {
             }
             else {
                 this.timer.hasFinished = true;
-                // this.presentAlertConfirm()
+                this.presentAlertConfirm()
             }
         }, 1000);
     }
@@ -113,10 +113,10 @@ export class TimerComponent {
       await alert.present();
     }
 
-    spillImage(array) {
+    spillImage(array, level) {
       for (let i = 0; i < array.length; i++) {
   
-        let student = "level1-" + i;
+        let student = level + "-" + i;
         let inter = setTimeout(() => {
           (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
         }, 1000*(i+1));

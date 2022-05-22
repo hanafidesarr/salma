@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>LEVEL 1</ion-title>
+    <ion-title>LEVEL 2</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear" [routerLink]="['/permainan/level2']">
         <ion-icon slot="icon-only" name="exit"></ion-icon>
@@ -14,7 +14,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <timer timeInSeconds="50" class="ion-text-center"></timer>
+        <timer #timer timeInSeconds="50" class="ion-text-center"></timer>
       </ion-col>
       <ion-col>
         <ion-button *ngIf="!start" expand="full" (click)="startGame()">Yuks Mulai Permainan</ion-button>
@@ -29,7 +29,7 @@
 
   <div class="fruits">
     <div class="xc"  *ngFor="let obj of array; let i = index">
-      <ion-img class="level1-{{i}} image-class" [src]="obj.url" style="width: 2rem;"></ion-img>
+      <ion-img class="level2-{{i}} image-class" [src]="obj.url" style="width: 2rem;"></ion-img>
     </div>
   </div>
 </ion-content>

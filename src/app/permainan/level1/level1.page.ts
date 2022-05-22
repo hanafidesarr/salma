@@ -78,7 +78,7 @@ export class Level1Page implements OnInit {
   startGame() {
     this.start = true
     this.timer.startTimer();
-    this.timer.spillImage(this.array)
+    this.timer.spillImage(this.array, "level1")
   }
 
   stopGame() {
@@ -88,4 +88,9 @@ export class Level1Page implements OnInit {
   }
   ngOnInit() {
   }
+
+  ionViewDidLeave() {
+    this.stopGame()
+  }
+  
 }
