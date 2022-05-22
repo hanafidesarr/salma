@@ -1,6 +1,9 @@
 import {Component, Input} from '@angular/core';
 import {ITimer} from './itimer'
  
+
+import { AlertController } from '@ionic/angular';
+
  
 @Component({
     selector: 'timer',
@@ -10,8 +13,9 @@ export class TimerComponent {
  
     @Input() timeInSeconds: number;
     public timer: any;
+    interval: any = [];
  
-    constructor() {
+    constructor(public alertController: AlertController) {
     }
  
     ngOnInit() {
@@ -60,7 +64,7 @@ export class TimerComponent {
             }
             else {
                 this.timer.hasFinished = true;
-                alert("waktu habis")
+                // this.presentAlertConfirm()
             }
         }, 1000);
     }
@@ -78,5 +82,60 @@ export class TimerComponent {
         secondsString = (seconds < 10) ? "0" + seconds : seconds.toString();
         return hoursString + ':' + minutesString + ':' + secondsString;
     }
-    
+
+    async presentAlertConfirm() {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Waktu nya sudah habis',
+        message: 'Apakah kamu mau mengulanginya lagi?',
+        buttons: [
+          {
+            text: 'Tidak',
+            role: 'cancel',
+            cssClass: 'secondary',
+            id: 'cancel-button',
+            handler: (blah) => {
+              console.log('Confirm Cancel: blah');
+            }
+          }, {
+            text: 'Baik',
+            id: 'confirm-button',
+            handler: () => {
+              console.log('Confirm Okay');
+              this.initTimer();
+
+              this.startTimer()
+            }
+          }
+        ]
+      });
+  
+      await alert.present();
+    }
+
+    spillImage(array) {
+      for (let i = 0; i < array.length; i++) {
+  
+        let student = "level1-" + i;
+        let inter = setTimeout(() => {
+          (<HTMLElement>document.querySelector('.' + student)).style.width = '3rem'
+        }, 1000*(i+1));
+
+        this.interval.push(inter)
+      }
+    }
+
+    stopSpill() {
+      var elems = Array.from(document.querySelectorAll<HTMLElement>('.image-class'))
+      var index = 0, length = elems.length;
+      for ( ; index < length; index++) {
+          elems[index].style.width = '2rem'
+      }
+      if (this.interval != '') {
+        for (let i = 0; i < this.interval.length; i++) {
+          clearTimeout(this.interval[i])
+        }
+      }
+    }
+
 }

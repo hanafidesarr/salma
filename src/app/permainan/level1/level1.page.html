@@ -4,10 +4,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <timer #timer timeInSeconds="50"></timer>
+<ion-content class="ion-text-center">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <timer #timer timeInSeconds="50" class="ion-text-center"></timer>
+      </ion-col>
+      <ion-col>
+        <ion-button *ngIf="!start" expand="full" (click)="startGame()">Yuks Mulai Permainan</ion-button>
+        <ion-button *ngIf="start" expand="full" color="danger" (click)="stopGame()">Berhenti</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <!-- <button [disabled]="timer && !timer.hasFinished()">
     Save
   </button> -->
+
+  <div class="fruits">
+    <div class="xc"  *ngFor="let obj of array; let i = index">
+      <ion-img class="level1-{{i}} image-class" [src]="obj.url" style="width: 2rem;"></ion-img>
+    </div>
+  </div>
 </ion-content>
