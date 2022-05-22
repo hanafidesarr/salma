@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'home-ran',
     loadChildren: () => import('./home-ran/home-ran.module').then( m => m.HomeRanPageModule)
+  },
+  {
+    path: 'permainan',
+    loadChildren: () => import('./permainan/permainan.module').then( m => m.PermainanPageModule)
   }
 ];
 
